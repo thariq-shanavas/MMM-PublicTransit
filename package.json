@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/thariq-shanavas/MMM-PublicTransit#readme",
   "devDependencies": {
-    "@eslint/js": "^9.10.0",
+    "@eslint/js": "^9.39.1",
     "@stylistic/eslint-plugin": "^2.7.2",
     "eslint": "^9.10.0",
     "globals": "^15.9.0"
