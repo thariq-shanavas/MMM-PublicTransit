@@ -1,25 +1,21 @@
 const NodeHelper = require("node_helper");
-//const fetch = require("node-fetch"); // Ensure fetch is available
-const { URL } = require("url"); // Ensure URL is available
+const fetch = require("node-fetch");
+const { URL } = require("url");
 
 module.exports = NodeHelper.create({
   async socketNotificationReceived(notification, payload) {
     
     if (!payload.activeHours) {
-      //console.log("Outside active hours, skipping API Calls.");
-      return; // Exit if activeHours is not defined
+      return; 
     }
 
     if (notification === "FETCH_BUS_SCHEDULE") {
       try {
-        // Build the URL with query parameters
         const baseUrl = 'https://external.transitapp.com/v3/public/stop_departures';
         const url = new URL(baseUrl);
         url.searchParams.append('global_stop_ids', payload.global_stop_ids);
         url.searchParams.append('remove_cancelled', 'true');
         
-        // Make the API request
-        //console.log("Making API call to Transit App...");
         const response = await fetch(url, {
           method: 'GET',
           headers: {
@@ -28,12 +24,10 @@ module.exports = NodeHelper.create({
           }
         });
     
-        // Check if the request was successful
         if (!response.ok) {
           throw new Error(`API request failed with status: ${response.status}`);
         }
         
-        // Sort the response in ascending order of departure_time
         const data = await response.json();
         const routeDepartures = data.route_departures;
         const result = [];
@@ -44,17 +38,15 @@ module.exports = NodeHelper.create({
               route.itineraries.forEach(itinerary => {
                 if (itinerary.schedule_items && Array.isArray(itinerary.schedule_items)) {
                   itinerary.schedule_items.forEach(scheduleItem => {
-                      if (payload.showHeadSign) {
-                        result.push({
-                        route_short_name: itinerary.headsign,
+                      
+                      // Push all available data to the frontend
+                      result.push({
+                        route_short_name: route.route_short_name, 
+                        trip_headsign: itinerary.headsign,
                         departure_time: scheduleItem.departure_time,
-                        });
-                      } else {
-                        result.push({
-                        route_short_name: route.route_short_name,
-                        departure_time: scheduleItem.departure_time,
-                        });
-                      }
+                        route_id: route.route_id
+                      });
+
                   });
                 }
               });
