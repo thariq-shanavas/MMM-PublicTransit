@@ -2,7 +2,7 @@
 
 This [MagicMirror](https://magicmirror.builders/) module displays upcoming bus or train times from any transit stop across [150+ transit agencies in 25 countries](https://transitapp.com/en/region).  See if your stop is served by [Transit](https://transitapp.com/) using their app before investing time in this module!
 
-![Example of MMM-PublicTransit](Images/sample.png)
+![Example of MMM-PublicTransit](Images/sample2.png)
 
 ## Breaking Changes
 Nov 19, 2025: The configuration variable `global_stop_id` has been renamed to `global_stop_ids` to support showing multiple stops.
