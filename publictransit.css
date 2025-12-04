@@ -1,3 +1,37 @@
+/* Original Style */
 .MMM-PublicTransit div {
-    color: rgb(26, 59, 247);
+    color: rgb(255, 255, 255);
+}
+
+/* --- New Styles for Enhanced Display --- */
+
+/* 1. Route Number (Default style for any route) */
+.MMM-PublicTransit span[class^="route-"] {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* 2. Headsign (Destination Name) */
+.MMM-PublicTransit .headsign {
+    font-size: 20px;
+    color: #ddd;
+    font-weight: normal;
+    margin-left: 6px;
+    opacity: 0.8;
+}
+
+/* 3. Arrival Time (Minutes) */
+.MMM-PublicTransit .arrival-time {
+    color: #a3ea80 !important;
+    font-weight: normal;
+    text-align: right;
+}
+
+/* 4. Absolute Time (e.g. - 12:45pm) */
+.MMM-PublicTransit .time-small {
+    font-size: 16px;
+    color: #aaa;
+    font-weight: normal;
+    margin-left: 4px;
+    opacity: 0.7;
 }
