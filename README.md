@@ -78,6 +78,7 @@ The terms and conditions of the Transit App API requires that the Transit Logo b
 | `global_stop_ids` (required)  | Comma separated list of global stop IDs from the Transit App API. If you need to display departures from only one stop, your configuration will look like this: `global_stop_ids: 'ABC:1234'`. To monitor multiple stations, separate the stations by a comma like this: `global_stop_ids: 'ABC:1234,XYZ:12345'`                              | `""`        |
 | `apiKey` (required)           | Your Transit App API key.                                                   | `""`        |
 | `showHeadSign`     | Show the head sign on the bus/train instead of the route name. Sometimes the eastbound and westbound routes have the same route name (e.g., the New York LIRR), in which case set this to `true`.                         | `false`     |
+| `showTime`         | Show the departure time next to the ETA. | `false` |
 | `logosize`         | Size of the Transit logo.                                                   | `"40px"`    |
 | `showlogo`         | Show or hide the transit logo (`true`, `false`)                                                   | `true`   |
 | `displayed_entries`| Number of bus times to display.                                             | `3`         |
