@@ -82,8 +82,8 @@ Module.register("MMM-PublicTransit", {
     while (i < this.busSchedule.length && j < this.config.displayed_entries) {
       let stop = this.busSchedule[i];
 
-      // Filter out past buses (tolerance -2 min)
-      if (Math.round((stop.departure_time - Date.now() / 1000) / 60) < -2) {
+      // Filter out past buses (tolerance 1 min)
+      if (Math.round((stop.departure_time - Date.now() / 1000) / 60) < 1) {
         i++;
         continue;
       }
