@@ -137,6 +137,9 @@ Module.register("MMM-PublicTransit", {
 
       departureTime.innerHTML = timeHTML;
 
+      // Ensure both sides are vertically centered within the flex container
+      routeInfo.style.alignItems = "center";
+
       routeInfo.appendChild(routeName);
       routeInfo.appendChild(departureTime);
       busTimeContainer.appendChild(routeInfo);
