@@ -31,6 +31,5 @@
     "globals": "^16.5.0"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2"
   }
 }
