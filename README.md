@@ -88,6 +88,8 @@ The terms and conditions of the Transit App API requires that the Transit Logo b
 | `activeHoursEnd`   | Active hours end time (24-hour format).                                     | `22`        |
 | `activeDays`       | Active days of the week (0 = Sunday, 6 = Saturday).                         | `[0, 1, 2, 3, 4, 5, 6]`|
 | `updateFrequency`  | Update frequency in minutes. Recommendeded between 10 and 30. You will run out of your 1500 free API calls/month if you reduce the update frequency below 30 minutes without also shortening the period the module is active via `activeHoursStart`, `activeHoursEnd` and `activeDays`.               | `30`        |
+| `stationNames`     | Custom station names for display. Maps global_stop_id to a custom header name. Only displayed when monitoring multiple stations. Example: `{ 'ABC:1234': 'Downtown Station', 'XYZ:5678': 'Airport Terminal' }` | `{}`        |
+| `stationDisplayedEntries` | Per-station entry limits. Maps global_stop_id to the number of departures to display for that station. If a station is not specified, the global `displayed_entries` value is used. Example: `{ 'ABC:1234': 5, 'XYZ:5678': 2 }` | `{}`        |
 
 
 ### Update
