@@ -91,17 +91,22 @@ Module.register("MMM-PublicTransit", {
     });
 
     // Display each station group separately
+    const stationCount = Object.keys(stationGroups).length;
+    
     Object.keys(stationGroups).forEach(stationId => {
       const station = stationGroups[stationId];
       
-      // Use custom name if provided, otherwise use API name
-      const displayName = this.config.stationNames[stationId] || station.name;
-      
-      // Create station header
-      const stationHeader = document.createElement("div");
-      stationHeader.className = "station-header";
-      stationHeader.innerHTML = displayName;
-      container.appendChild(stationHeader);
+      // Only show station header if there are multiple stations
+      if (stationCount > 1) {
+        // Use custom name if provided, otherwise use API name
+        const displayName = this.config.stationNames[stationId] || station.name;
+        
+        // Create station header
+        const stationHeader = document.createElement("div");
+        stationHeader.className = "station-header";
+        stationHeader.innerHTML = displayName;
+        container.appendChild(stationHeader);
+      }
 
       // Create station group container
       const stationContainer = document.createElement("div");
