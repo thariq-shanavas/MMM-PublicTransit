@@ -71,6 +71,14 @@ The free tier is limited to 1500 calls per month, or about one every 30 minutes.
 
 The terms and conditions of the Transit App API requires that the Transit Logo be shown next to the feed. Transit App provides a valuable service at no cost and I feel it is a very fair ask. However, this code is MIT licensed and 'free' as in freedom, so if you feel very strongly about the logo you may hide it from the configuration file.
 
+The module can get fairly wide if the verbose options are set. To manually increase the width of the module to avoid overlapping text, add the following to `MagicMirror/css/custom.css`:
+
+```css
+.MMM-PublicTransit  {
+    width: 400px;   /*Adjust as necessary*/
+}
+```
+
 ## Configuration Options
 
 | Option             | Description                                                                 | Default     |
