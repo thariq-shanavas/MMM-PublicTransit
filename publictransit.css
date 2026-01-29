@@ -35,3 +35,23 @@
     margin-left: 4px;
     opacity: 0.7;
 }
+
+/* 5. Station Header */
+.MMM-PublicTransit .station-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-top: 12px;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+}
+
+/* First station header should not have top margin */
+.MMM-PublicTransit .station-header:first-of-type {
+    margin-top: 0;
+}
+
+/* 6. Station Group Container */
+.MMM-PublicTransit .station-group {
+    margin-bottom: 8px;
+}
